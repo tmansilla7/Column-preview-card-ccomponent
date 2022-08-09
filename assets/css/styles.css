@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+:root{
+    --bodyHeadings: 'Big Shoulders Display', cursive;
+    --bodyFont: 'Lexend Deca', sans-serif;
+    --lightGreen: hsl(184, 100%, 22%);
+    --darkGreen: hsl(179, 100%, 13%);
+    --lightOrange: hsl(31, 77%, 52%);
+    --whiteColor: hsl(0, 0%, 95%);
+    --headingSize: 3rem;
+    --heightCard: 40rem;
+    --bodySize: 1.5rem;
+    --pd4: 4rem;
+}
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+    background-color: var(--whiteColor);
+    font-family: var(--bodyFont);
+    font-size: var(--bodySize);
+    padding: calc(var(--pd4) + 1rem) 0 0;
+}
+@media (min-width: 900px) { 
+    body{
+        padding: unset;
+        height: 100vh;
+        display: grid;
+        align-items: center;
+    }
+}
+img{
+    object-fit: cover;
+    max-width: 100%;
+    display: block;
+}
+a{
+    text-decoration: none;
+}
+.card__grid{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 30rem);
+}
+@media (min-width: 768px) { 
+    .card__grid{
+        height: var(--heightCard);
+    }
+}
+.card{
+    padding: var(--pd4) calc(var(--pd4) / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card__img{
+    height: 2.5rem;
+    width: 5rem;
+}
+.card__title{
+    font-family: var(--bodyHeadings);
+    font-size: var(--headingSize);
+    color: var(--whiteColor);
+    text-transform: uppercase;
+}
+.card__paragraph{
+    color: hsla(0, 0%, 100%, 0.75);
+    line-height: 1.8;
+}
+.card__button{
+    display: inline-block;
+    background-color:  var(--whiteColor);
+    text-align: center;
+    font-size: 1.4rem;
+    max-width: 12rem;
+    font-weight: 700;
+    border-radius: 1.5rem;
+    padding: calc(var(--pd4) - 3rem) calc(var(--pd4) / 2);
+}
+.card__button--first{
+    color: var(--lightOrange);
+}
+.card__button--second{
+    color: var(--lightGreen);
+}
+.card__button--third{
+    color: var(--darkGreen);
+}
+.card:nth-child(1){
+    background-color: var(--lightOrange);
+}
+.card:nth-child(2){
+    background-color: var(--lightGreen);
+}
+.card:nth-child(3){
+    background-color: var(--darkGreen);
+}
+.atributtion{    
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.4;
+}
+@media (min-width: 768px){ 
+    .atributtion{
+        position: absolute;
+        bottom: 1rem;
+        right: 0;
+        left: 0;
+    }
+}
+.atributtion__names, .atributtion__name{
+    font-weight: 700;
+}
+.atributtion__name{
+    color: var(--lightGreen);
+}
+.atributtion__names{
+    color: var(--lightOrange);
+}
